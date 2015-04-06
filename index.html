@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>C++ on the Web: ponies for developers without pwn’ing users</title>
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="elements.html"> <!-- TODO Vulcanize elements.html. -->
+  <link rel="stylesheet" href="styles.css" shim-shadowdom>
+</head>
+<body unresolved fullbleed>
+
+<template is="auto-binding" id="t">
+
+  <!-- Route controller. -->
+  <flatiron-director route="{{route}}" autoHash></flatiron-director>
+
+  <!-- Keyboard nav controller. -->
+  <core-a11y-keys id="keys" target="{{parentElement}}"
+                  keys="up down left right space space+shift"
+                  on-keys-pressed="{{keyHandler}}"></core-a11y-keys>
+
+  <core-scaffold id="scaffold">
+
+    <nav>
+      <core-toolbar>
+        <span>Ponies</span>
+      </core-toolbar>
+      <core-menu valueattr="hash" selected="{{route}}" selectedModel="{{selectedPage}}"
+                 on-core-select="{{menuItemSelected}}">
+        <template repeat="{{page, i in pages}}">
+          <paper-item hash="{{page.hash}}" noink>
+	    <core-icon icon="{{page.icon}}"></core-icon>
+          </paper-item>
+        </template>
+      </core-menu>
+    </nav>
+
+    <core-ajax id="ajax" auto url="{{selectedPage.page.url}}"
+               handleAs="document" on-core-response="{{onResponse}}">
+    </core-ajax>
+
+    <core-toolbar tool flex>
+      <div flex>{{selectedPage.page.name}}</div>
+      <core-icon-button icon="apps"></core-icon-button>
+    </core-toolbar>
+
+    <div layout horizontal center-center fit>
+      <core-animated-pages id="pages" selected="{{route}}" valueattr="hash"
+                           transitions="slide-from-right"
+                           on-tap="{{cyclePages}}">
+        <template repeat="{{page, i in pages}}">
+          <section hash="{{page.hash}}" layout vertical center-center>
+            <div>{{page.name}}</div>
+          </section>
+        </template>
+      </core-animated-pages>
+    </div>
+
+  </core-scaffold>
+
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>

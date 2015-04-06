@@ -1,0 +1,24 @@
+{
+  "name": "ponies",
+  "version": "0.0.0",
+  "description": "Ponies",
+  "moduleType": [
+    "es6"
+  ],
+  "authors": [
+    "JF Bastien"
+  ],
+  "license": "Apache",
+  "homepage": "github.com/jfbastien",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "~0.6.0",
+    "polymer": "Polymer/polymer#^0.5"
+  }
+}
