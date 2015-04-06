@@ -29,7 +29,7 @@
       <core-menu valueattr="hash" selected="{{route}}" selectedModel="{{selectedPage}}"
                  on-core-select="{{menuItemSelected}}">
         <template repeat="{{page, i in pages}}">
-          <paper-item hash="{{page.hash}}" noink>
+          <paper-item hash="{{page.hash}}">
 	    <core-icon icon="{{page.icon}}"></core-icon>
           </paper-item>
         </template>
