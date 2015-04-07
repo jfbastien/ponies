@@ -33,4 +33,8 @@ template.onResponse = function(e, detail, sender) {
                        pages.selectedItem.firstElementChild);
 };
 
+template.toggleCmd = function(e, detail, sender) {
+  document.querySelector('#cmd').toggle();
+};
+
 })();

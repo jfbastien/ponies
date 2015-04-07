@@ -27,12 +27,17 @@ core-animated-pages {
 core-animated-pages > * {
   border-radius: 1em;
   font-size: 4em;
-  background-color: white;
+  background: white;
 }
 
 body /deep/ core-toolbar {
-  background-color: #607D8B;
+  background: #607D8B;
   color: #fff;
+}
+
+core-toolbar img {
+  width: 100%;
+  height: 100%;
 }
 
 core-menu {
@@ -55,6 +60,10 @@ paper-item a {
 
 core-menu > paper-item.core-selected {
   background: #CFD8DC;
+}
+
+.core-overlay-backdrop {
+  background: #B0BEC5;
 }
 
 @media all and (max-width: 480px) {
