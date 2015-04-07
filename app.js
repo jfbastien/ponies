@@ -27,7 +27,6 @@ template.menuItemSelected = function(e, detail, sender) {
 
 template.onResponse = function(e, detail, sender) {
   var article = detail.response.querySelector('#content');
-
   var pages = document.querySelector('#pages');
   this.injectBoundHTML(article.innerHTML,
                        pages.selectedItem.firstElementChild);

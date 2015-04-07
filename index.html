@@ -31,7 +31,7 @@
       </core-menu>
     </nav>
 
-    <core-ajax id="ajax" auto url="{{selectedPage.page.url}}"
+    <core-ajax id="ajax" auto url="{{selectedPage.page.hash}}.html"
                handleAs="document" on-core-response="{{onResponse}}">
     </core-ajax>
 
@@ -46,7 +46,7 @@
                            on-tap="{{cyclePages}}">
         <template repeat="{{page, i in pages}}">
           <section hash="{{page.hash}}" layout vertical center-center>
-            <div>{{page.name}}</div>
+            <div><em>Loading {{page.name}}</em></div>
           </section>
         </template>
       </core-animated-pages>
