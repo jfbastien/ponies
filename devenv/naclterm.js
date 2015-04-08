@@ -137,13 +137,14 @@ NaClTerm.prototype.handleError_ = function(cmd, err) {
  */
 NaClTerm.prototype.doneLoadingUrl_ = function() {
   var width = this.width;
-  this.print('\r' + Array(width+1).join(' '));
+  //this.print('\r' + Array(width+1).join(' '));
   var message = '\rLoaded ' + this.lastUrl;
   if (this.lastTotal) {
     var kbsize = Math.round(this.lastTotal/1024)
     message += ' ['+ kbsize + ' KiB]';
   }
-  this.print(message.slice(0, width) + '\n')
+  //this.print(message.slice(0, width) + '\n')
+  this.print('\n');
 }
 
 /**
@@ -176,7 +177,7 @@ NaClTerm.prototype.handleRootProgress_ = function(
     message += ' [' + kbloaded + ' KiB/' + kbtotal + ' KiB ' + percent + '%]';
   }
 
-  this.print('\r' + message.slice(-this.width));
+  //this.print('\r' + message.slice(-this.width));
 }
 
 /**
@@ -240,7 +241,7 @@ NaClTerm.prototype.spawnRootProcess_ = function() {
 
   try {
     var handleSuccess = function(naclType) {
-      self.print('Loading NaCl module.\n');
+      //self.print('Loading NaCl module.\n');
       self.processManager.spawn(
           NaClTerm.nmf, argv, env, cwd, naclType, null, function(rootPid) {
         // Warn if we close while still running.
