@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "load_progress.pexe"
+      },
+      "pnacl-debug": {
+        "url": "load_progress_unstripped.bc"
+      }
+    }
+  }
+}

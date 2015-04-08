@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "gamepad.pexe"
+      },
+      "pnacl-debug": {
+        "url": "gamepad_unstripped.bc"
+      }
+    }
+  }
+}

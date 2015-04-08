@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "drive.pexe"
+      },
+      "pnacl-debug": {
+        "url": "drive_unstripped.bc"
+      }
+    }
+  }
+}

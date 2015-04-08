@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "url_loader.pexe"
+      },
+      "pnacl-debug": {
+        "url": "url_loader_unstripped.bc"
+      }
+    }
+  }
+}

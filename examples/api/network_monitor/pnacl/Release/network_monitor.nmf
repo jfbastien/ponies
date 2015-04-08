@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "network_monitor.pexe"
+      },
+      "pnacl-debug": {
+        "url": "network_monitor_unstripped.bc"
+      }
+    }
+  }
+}

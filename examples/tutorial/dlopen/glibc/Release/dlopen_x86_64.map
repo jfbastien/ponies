@@ -1,0 +1,442 @@
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+ .group         0x0000000000000000        0x8 glibc/Release/reverse_x86_64_pic.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 glibc/Release/reverse_x86_64_pic.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtendS.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+LOAD glibc/Release/reverse_x86_64_pic.o
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/libstdc++.so
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/libm.so
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/libgcc_s.so
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/libpthread.so
+START GROUP
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/libpthread.so.1106743a
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/libpthread_nonshared.a
+END GROUP
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/libc.so
+START GROUP
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/libc.so.1106743a
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/libc_nonshared.a
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/ld-nacl-x86-64.so.1
+END GROUP
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/libgcc_s.so
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtendS.o
+LOAD /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crtn.o
+                0x0000000000000000                . = 0x0
+                0x0000000000000000                _begin = .
+
+.init           0x0000000000000000       0x80
+ *(.init)
+ .init          0x0000000000000000       0x20 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+                0x0000000000000000                _init
+ .init          0x0000000000000020       0x20 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+ .init          0x0000000000000040       0x20 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtendS.o
+ .init          0x0000000000000060       0x20 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crtn.o
+                0x0000000000000080                . = ALIGN (0x20)
+
+.plt            0x0000000000000080      0x200
+ *(.plt)
+ .plt           0x0000000000000080      0x200 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+
+.text           0x0000000000000280     0xfd80
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000000000280       0x40 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+ .text          0x00000000000002c0      0x1a0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+ .text          0x0000000000000460       0xc0 glibc/Release/reverse_x86_64_pic.o
+                0x0000000000000460                Reverse
+ .text          0x0000000000000520       0x80 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtendS.o
+ .text          0x00000000000005a0        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crtn.o
+ *(.text.*personality*)
+ *(.gnu.warning)
+ *(.fini)
+ .fini          0x00000000000005a0       0x20 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+                0x00000000000005a0                _fini
+ .fini          0x00000000000005c0       0x20 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+ .fini          0x00000000000005e0       0x20 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crtn.o
+ *(__libc_freeres_fn)
+ *(__libc_thread_freeres_fn)
+                0x0000000000010000                . = ALIGN (0x10000)
+ *fill*         0x0000000000000600     0xfa00 90909090
+                0x0000000000010000                PROVIDE (__etext, .)
+                0x0000000000010000                PROVIDE (_etext, .)
+                0x0000000000010000                PROVIDE (etext, .)
+                0x0000000010000000                . = 0x10000000
+
+.note.gnu.build-id
+                0x0000000010000000       0x24
+                0x0000000010000000                PROVIDE (__note_gnu_build_id_start, .)
+ *(.note.gnu.build-id)
+ .note.gnu.build-id
+                0x0000000010000000       0x24 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+                0x0000000010000024                PROVIDE (__note_gnu_build_id_end, .)
+
+.dummy
+
+.hash           0x0000000010000028       0x98
+ *(.hash)
+ .hash          0x0000000010000028       0x98 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym         0x00000000100000c0      0x1c8
+ *(.dynsym)
+ .dynsym        0x00000000100000c0      0x1c8 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+
+.dynstr         0x0000000010000288      0x10b
+ *(.dynstr)
+ .dynstr        0x0000000010000288      0x10b /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+
+.gnu.version    0x0000000010000394       0x26
+ *(.gnu.version)
+ .gnu.version   0x0000000010000394       0x26 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+
+.gnu.version_d  0x00000000100003c0        0x0
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x0000000000000000        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+
+.gnu.version_r  0x00000000100003c0       0x40
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x00000000100003c0       0x40 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+
+.rela.dyn       0x0000000010000400        0x0
+ .rela.ifunc    0x0000000000000000        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+ .rela.eh_frame
+                0x0000000000000000        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+
+.rela.text      0x0000000010000400        0x0
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ .rela.text     0x0000000000000000        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+
+.rela.rodata
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+
+.rel.data.rel.ro
+ *(.rel.data.rel.ro* .rel.gnu.linkonce.d.rel.ro.*)
+
+.rela.data.rel.ro
+ *(.rela.data.rel.ro* .rela.gnu.linkonce.d.rel.ro.*)
+
+.rel.data
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+
+.rela.data      0x0000000010000400       0x30
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ .rela.data.rel
+                0x0000000010000400       0x18 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+ .rela.data.DW.ref.__gxx_personality_v0
+                0x0000000010000418       0x18 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+
+.rel.tdata
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+
+.rela.tdata
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+
+.rel.tbss
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+
+.rela.tbss
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got       0x0000000010000430       0x78
+ *(.rela.got)
+ .rela.got      0x0000000010000430       0x78 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+
+.rel.bss
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+
+.rela.bss
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt       0x00000000100004a8       0xa8
+ *(.rela.plt)
+ .rela.plt      0x00000000100004a8       0xa8 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+
+.rodata
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr   0x0000000010000550       0x1c
+ *(.eh_frame_hdr)
+ .eh_frame_hdr  0x0000000010000550       0x1c glibc/Release/reverse_x86_64_pic.o
+
+.eh_frame       0x0000000010000570       0x84
+ *(.eh_frame)
+ .eh_frame      0x0000000010000570       0x40 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+ .eh_frame      0x00000000100005b0        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+ .eh_frame      0x00000000100005b0       0x40 glibc/Release/reverse_x86_64_pic.o
+ .eh_frame      0x00000000100005f0        0x4 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtendS.o
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+                0x00000000100005f4                . = (ALIGN (0x10000) - ((0x10000 - .) & 0xffff))
+                0x00000000100105f4                . = DATA_SEGMENT_ALIGN (0x10000, 0x10000)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array
+ *(.preinit_array)
+
+.init_array
+ *(SORT(.init_array.*))
+ *(.init_array)
+
+.fini_array
+ *(.fini_array)
+ *(SORT(.fini_array.*))
+
+.ctors          0x00000000100105f4        0x8
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ .ctors         0x00000000100105f4        0x4 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+ .ctors         0x00000000100105f8        0x4 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtendS.o
+
+.dtors          0x00000000100105fc        0x8
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ .dtors         0x00000000100105fc        0x4 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+ .dtors         0x0000000010010600        0x4 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtendS.o
+                0x0000000010010600                __DTOR_END__
+
+.jcr            0x0000000010010604        0x4
+ *(.jcr)
+ .jcr           0x0000000010010604        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+ .jcr           0x0000000010010604        0x4 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtendS.o
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic        0x0000000010010608      0x190
+ *(.dynamic)
+ .dynamic       0x0000000010010608      0x190 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+                0x0000000010010608                _DYNAMIC
+
+.got            0x0000000010010798       0x28
+ *(.got)
+ .got           0x0000000010010798       0x28 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+                0x00000000100107c0                . = DATA_SEGMENT_RELRO_END (., 0x18)
+
+.got.plt        0x00000000100107c0       0x50
+ *(.got.plt)
+ .got.plt       0x00000000100107c0       0x50 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+                0x00000000100107c0                _GLOBAL_OFFSET_TABLE_
+
+.data           0x0000000010010810        0x8
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000010010810        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+ .data          0x0000000010010810        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+ .data.rel      0x0000000010010810        0x4 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+                0x0000000010010810                __dso_handle
+ .data          0x0000000010010814        0x0 glibc/Release/reverse_x86_64_pic.o
+ .data.DW.ref.__gxx_personality_v0
+                0x0000000010010814        0x4 glibc/Release/reverse_x86_64_pic.o
+                0x0000000010010814                DW.ref.__gxx_personality_v0
+ .data          0x0000000010010818        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtendS.o
+ .data          0x0000000010010818        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crtn.o
+ *(.gnu.linkonce.d.*personality*)
+
+.data1
+ *(.data1)
+                0x0000000010010818                _edata = .
+                0x0000000010010818                PROVIDE (edata, .)
+                0x0000000010010818                . = DATA_SEGMENT_END (.)
+                0x0000000010020000                . = ALIGN (0x10000)
+                0x0000000010020000                __bss_start = .
+
+.bss            0x0000000010020000       0x28
+ *(.dynbss)
+ .dynbss        0x0000000000000000        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000010020000        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+ .bss           0x0000000010020000       0x28 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+ .bss           0x0000000010020028        0x0 glibc/Release/reverse_x86_64_pic.o
+ .bss           0x0000000010020028        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtendS.o
+ .bss           0x0000000010020028        0x0 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crtn.o
+ *(COMMON)
+                0x0000000010020028                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x0000000010020028                . = ALIGN (0x4)
+                0x0000000010020028                . = ALIGN (0x4)
+                0x0000000010020028                _end = .
+                0x0000000010020028                PROVIDE (end, .)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x66
+ *(.comment)
+ .comment       0x0000000000000000       0x66 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crti.o
+                                         0x67 (size before relaxing)
+ .comment       0x0000000000000000       0x67 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtbeginS.o
+ .comment       0x0000000000000000       0x67 glibc/Release/reverse_x86_64_pic.o
+ .comment       0x0000000000000000       0x67 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/crtendS.o
+ .comment       0x0000000000000000       0x67 /home/jfb/nacl_sdk/pepper_42/toolchain/linux_x86_glibc/bin/../lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/lib/../lib64/crtn.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000       0x30
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x30 glibc/Release/reverse_x86_64_pic.o
+
+.debug_pubnames
+                0x0000000000000000       0x1e
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x0000000000000000       0x1e glibc/Release/reverse_x86_64_pic.o
+
+.debug_info     0x0000000000000000       0xf9
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000       0xf9 glibc/Release/reverse_x86_64_pic.o
+
+.debug_abbrev   0x0000000000000000       0xa6
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0xa6 glibc/Release/reverse_x86_64_pic.o
+
+.debug_line     0x0000000000000000       0xbb
+ *(.debug_line)
+ .debug_line    0x0000000000000000       0xbb glibc/Release/reverse_x86_64_pic.o
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str      0x0000000000000000      0x10c
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x10c glibc/Release/reverse_x86_64_pic.o
+                                        0x145 (size before relaxing)
+
+.debug_loc      0x0000000000000000       0xcc
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000       0xcc glibc/Release/reverse_x86_64_pic.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000       0x60
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000       0x60 glibc/Release/reverse_x86_64_pic.o
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.note.ABI-tag)
+OUTPUT(glibc/Release/libreverse_x86_64.so elf64-x86-64-nacl)

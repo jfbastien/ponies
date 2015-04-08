@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "earth_simd.pexe"
+      },
+      "pnacl-debug": {
+        "url": "earth_simd_unstripped.bc"
+      }
+    }
+  }
+}

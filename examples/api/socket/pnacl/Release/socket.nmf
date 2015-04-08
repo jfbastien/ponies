@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "socket.pexe"
+      },
+      "pnacl-debug": {
+        "url": "socket_unstripped.bc"
+      }
+    }
+  }
+}

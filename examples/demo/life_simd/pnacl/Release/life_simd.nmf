@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "life_simd.pexe"
+      },
+      "pnacl-debug": {
+        "url": "life_simd_unstripped.bc"
+      }
+    }
+  }
+}

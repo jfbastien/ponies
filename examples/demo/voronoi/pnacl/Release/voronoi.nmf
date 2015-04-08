@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "voronoi.pexe"
+      },
+      "pnacl-debug": {
+        "url": "voronoi_unstripped.bc"
+      }
+    }
+  }
+}

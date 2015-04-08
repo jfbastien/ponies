@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "flock.pexe"
+      },
+      "pnacl-debug": {
+        "url": "flock_unstripped.bc"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "filesystem_passing.pexe"
+      },
+      "pnacl-debug": {
+        "url": "filesystem_passing_unstripped.bc"
+      }
+    }
+  }
+}

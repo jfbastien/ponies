@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "earth.pexe"
+      },
+      "pnacl-debug": {
+        "url": "earth_unstripped.bc"
+      }
+    }
+  }
+}

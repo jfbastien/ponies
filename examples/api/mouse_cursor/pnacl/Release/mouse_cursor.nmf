@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "mouse_cursor.pexe"
+      },
+      "pnacl-debug": {
+        "url": "mouse_cursor_unstripped.bc"
+      }
+    }
+  }
+}
