@@ -1,0 +1,8 @@
+{
+  "files": {},
+  "program": {
+    "x86-64": {
+      "url": "_platform_specific/x86_64/bash.nexe"
+    }
+  }
+}

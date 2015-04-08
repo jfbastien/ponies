@@ -1,0 +1,82 @@
+#!/bin/bash
+# Copyright (c) 2014 The Native Client Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# This script is intended to be sourced.
+# It scans your packages and adds the appropriate things to the environment.
+
+export TOOLCHAIN=newlib
+
+LIB_DIR=lib32
+export PACKAGE_LIB_DIR=lib32
+export PACKAGE_ALT_LIB_DIR=_platform_specific/x86_32/lib32
+if [ ${NACL_ARCH} = "x86_64" ]; then
+  LIB_DIR=lib
+  export PACKAGE_LIB_DIR=lib64
+  export PACKAGE_ALT_LIB_DIR=_platform_specific/x86_64/lib64
+fi
+export NACL_SDK_ROOT=/mnt/html5/mingn
+export NACL_TOOLCHAIN_ROOT=${NACL_SDK_ROOT}/toolchain/nacl_x86_glibc
+LD_LIBRARY_PATH=${NACL_TOOLCHAIN_ROOT}/x86_64-nacl/${LIB_DIR}
+LD_LIBRARY_PATH+=:${NACL_TOOLCHAIN_ROOT}/${NACL_ARCH}-nacl/usr/lib
+LD_LIBRARY_PATH+=:/mnt/html5/coreutils.${NACL_ARCH}/${PACKAGE_LIB_DIR}
+export LD_LIBRARY_PATH
+export LIBRARY_PATH=${LD_LIBRARY_PATH}
+export PATH=${NACL_SDK_ROOT}/toolchain/nacl_x86_glibc/bin
+# TODO(bradnelson): Figure out why this is now needed to find cc1.
+PATH+=:${NACL_SDK_ROOT}/toolchain/nacl_x86_glibc/libexec/gcc/x86_64-nacl/4.4.3
+PATH+=:/mnt/html5/coreutils.${NACL_ARCH}
+PATH+=:/mnt/http
+
+# Allow cross development by exporting alternate library paths.
+LIBRARY_PATH32=${NACL_TOOLCHAIN_ROOT}/x86_64-nacl/lib32
+LIBRARY_PATH32+=:${NACL_TOOLCHAIN_ROOT}/i686-nacl/usr/lib
+export LIBRARY_PATH32
+LIBRARY_PATH64=${NACL_TOOLCHAIN_ROOT}/x86_64-nacl/lib
+LIBRARY_PATH64+=:${NACL_TOOLCHAIN_ROOT}/x86_64-nacl/usr/lib
+export LIBRARY_PATH64
+
+# TODO(bradnelson): Figure out why it can't find them normally.
+# Compiler has trouble finding its c++ headers, workaround.
+tc_inc=${NACL_TOOLCHAIN_ROOT}/x86_64-nacl/include/c++/4.4.3
+export CPLUS_INCLUDE_PATH=${tc_inc}:${tc_inc}/x86_64-nacl
+
+export PYTHONHOME=/lib/python2.7
+export PYTHONPATH=/lib/python2.7
+
+export RUBYLIB=/usr/lib/ruby/2.0.0
+export RUBYLIB=${RUBYLIB}:${RUBYLIB}/${NACL_ARCH}-nacl
+alias ruby='ruby /bin/irb'
+alias emacs='ENABLE_CONTROL_C=0 emacs'
+
+# Make vim emit directly until we have pipes.
+export PAGER=cat
+
+# Allow ctrl-c to work.
+export ENABLE_CONTROL_C=1
+
+# Scan through packages.
+for package_dir in /mnt/html5/packages/*; do
+  # Find the name of the package.
+  package=${package_dir##*/}
+  package_root=${package%.*}
+  # Figure out the main package dir.
+  if [ -d ${package_dir}/${package_root} ]; then
+    package_inside=${package_dir}/${package_root}
+  else
+    package_inside=${package_dir}
+  fi
+
+  # Add package to the path and library path.
+  export PATH=${PATH}:${package_inside}
+  package_libs=${package_inside}/${PACKAGE_LIB_DIR}
+  if [ -d ${package_libs} ]; then
+    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${package_libs}
+  fi
+  # Add optional platform specific library path.
+  package_libs=${package_inside}/${PACKAGE_ALT_LIB_DIR}
+  if [ -d ${package_libs} ]; then
+    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${package_libs}
+  fi
+done

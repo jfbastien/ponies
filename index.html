@@ -54,23 +54,33 @@
   </core-scaffold>
 
   <core-overlay id="cmd" transition="core-transition-center" backdrop layered>
-    <core-toolbar>
-      <span>Command</span>
-    </core-toolbar>
-    <!-- place all overlay styles inside the overlay target -->
+    <!--
+	Place all overlay styles inside the overlay target: it otherwise gets
+	overwritten dynamically by Polymer.
+
+	Use absolute pixel sizes for width/height to avoid issues when resizing
+	the window. At least emacs still has some bugs in that area.
+      -->
     <style no-shim>
       #cmd {
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         -webkit-user-select: none;
         -moz-user-select: none;
-        width: 90%;
-        height: 90%;
-        background: #ECEFF1;
+        width: 700px;
+        height: 500px;
+        background: black;
+        margin: 0;
+        padding: 0;
         box-shadow: 0 1em 4em rgba(0,0,0,0.9);
+        overflow: hidden;
       }
     </style>
-    <div id="command">Lorem ipsum dolor sit amet, an vis aliquid habemus, eu has amet omittam, accusam officiis mea te. An veri aliquid temporibus ius, at brute audire sit. At nam sadipscing disputationi, eos quod imperdiet ut. Insolens corrumpit intellegat te usu, sed alii timeam liberavisse ei. Nobis eirmod no mei, percipit patrioque no eos, appetere argumentum et his. Partem quidam melius ne eos, cu solum mentitum disputando mea.</div>
+    <iframe id="bash"
+	    src="devenv/bash.html"
+            frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
+	    style="width: 100%; height: 100%;">
+    </iframe>
   </core-overlay>
 
 </template>

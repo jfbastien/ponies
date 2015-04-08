@@ -1,0 +1,253 @@
+#!/bin/bash
+# Copyright (c) 2014 The Native Client Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# Package installer script for use inside the devenv environment.
+# Assumes setup-environment has been source at least once in the parent
+# environment.
+# Written to avoid using anything other than bash, geturl, and unzip when
+# installing core packages.
+
+set -o errexit
+set -o nounset
+shopt -s nullglob
+
+STORAGE_URL=${STORAGE_URL:-https://naclports.storage.googleapis.com/builds}
+SDK_VERSION=${SDK_VERSION:-pepper_44}
+REVISION=${REVISION:-trunk-410-gb09ca82}
+DEFAULT_SOURCE="${STORAGE_URL}/${SDK_VERSION}/${REVISION}/publish"
+VERBOSE=0
+
+RemoveDir() {
+  local path="$1"
+  if [ -d ${path} ]; then
+    rm -rf ${path}/* || true
+    rm -rf ${path}
+  fi
+}
+
+#
+# $1 - package name
+#
+InstallPackage() {
+  local package="$1"
+  local subdir="${TOOLCHAIN}.zip"
+  local source_base="${PACKAGE_SOURCE}"
+
+  for info in ${PACKAGE_INFO}; do
+    local info_array=(${info//|/ })
+    if [ "${package}" = "${info_array[0]}" ]; then
+      if [ "${ALTERNATE_SOURCE}" == "0" ]; then
+        source_base="${info_array[1]}"
+      fi
+      if [[ "${ALTERNATE_SOURCE}" == "0" && ${#info_array[@]} > 3 && "${info_array[3]}" != "" ]]; then
+        subdir="${info_array[3]}"
+      else
+        subdir="${info_array[2]}"
+      fi
+    fi
+  done
+
+  local url=${source_base}/${package}/${subdir}
+  InstallPackageFromUrl ${package} ${url}
+}
+
+#
+# $1 - package name
+# $2 - zip file url
+#
+InstallPackageFromUrl() {
+  local package=$1
+  local url=$2
+  local package_dir=/mnt/html5/packages/${package}.${NACL_ARCH}
+  local clobber=1
+
+  # Special case for MinGN.
+  if [[ "${package}" = "mingn.base" || "${package}" = "mingn.lib" ]]; then
+    url="${PACKAGE_SOURCE}/mingn/${subdir}"
+    package_dir="/mnt/html5"
+    clobber=0
+  fi
+  # Special case for coreutils.
+  if [[ "${package}" = "coreutils" ]]; then
+    package_dir="/mnt/html5/coreutils.${NACL_ARCH}"
+    clobber=0
+  fi
+
+  local stamp_dir=/mnt/html5/stamps/${package}.${NACL_ARCH}
+  local url_stamp="${stamp_dir}/${url//\//_}"
+
+  if [ -d ${package_dir}/${package} ]; then
+    local package_inside=${package_dir}/${package}
+  else
+    local package_inside=${package_dir}
+  fi
+
+  if [[ ${PACKAGE_FORCE} != 1 && -d ${url_stamp} ]]; then
+    # Package is up to date.
+    return
+  fi
+
+  if [ -d ${stamp_dir} ]; then
+    echo "Updating ${package} package..."
+  else
+    echo "Installing ${package} package..."
+  fi
+  local archive=/tmp/devenv.${package}.zip
+  echo "Downloading ${url}..."
+  if ! geturl ${url} ${archive}; then
+    echo "geturl failed"
+    exit 1
+  fi
+
+  echo "Extracting ${package}..."
+  if [ ! -e ${archive} ]; then
+    echo "${archive} does not exist!"
+    exit 1
+  fi
+  if [ "${clobber}" = 1 ]; then
+    RemoveDir ${package_dir}
+  fi
+  if [ ! -d ${package_dir%/*} ]; then
+    mkdir -p ${package_dir}
+  fi
+  local unzip_flags=
+  if [ ${VERBOSE} != "1" ]; then
+    unzip_flags=-q
+  fi
+  if ! unzip -o $unzip_flags -d ${package_dir} ${archive}; then
+    echo "error: unzip failed"
+    exit 1
+  fi
+  rm ${archive}
+
+  # Update package_inside.
+  if [ -d ${package_dir}/${package} ]; then
+    package_inside=${package_dir}/${package}
+  else
+    package_inside=${package_dir}
+  fi
+
+  # TODO(bradnelson): Do something better.
+  # Rename appropriate nexe/pexe to unsuffixed version.
+  local suffixes=".pexe _pnacl.pexe _${NACL_ARCH}.nexe"
+  local platform_dirs="_platform_specific/${NACL_ARCH}/ \
+                       _platform_specific/all/"
+  if [ "${NACL_ARCH}" = "i686" ]; then
+    suffixes+=" _x86_32.nexe"
+    platform_dirs+=" _platform_specific/x86_32/"
+  fi
+  for alt in "" _ppapi; do
+    for plat in "" ${platform_dirs}; do
+      for suffix in ${suffixes}; do
+        local exe=${package_inside}/${plat}${package}${alt}${suffix}
+        if [ -e ${exe} ]; then
+          cp ${exe} ${package_inside}/${package}
+        fi
+      done
+    done
+  done
+
+  # Remove out stamps and write out new one.
+  RemoveDir ${stamp_dir}
+  mkdir -p ${url_stamp}
+  echo "Done."
+}
+
+function Usage() {
+  echo "Usage: $0 [options]"
+  echo "  -i <package> = install package"
+  echo "  -s <source> = alternate package source"
+  echo "  -L = local package source (use with make run in naclports)"
+  echo "  -f = force install"
+  echo "  -h = help"
+  exit 1
+}
+
+function main() {
+  PACKAGE_LIST=""
+  PACKAGE_FORCE=0
+  ALTERNATE_SOURCE=0
+
+  while getopts "vs:i:hLf" o; do
+    case "${o}" in
+      i)
+        PACKAGE_LIST+=" ${OPTARG}"
+        ;;
+      s)
+        PACKAGE_SOURCE="${OPTARG}"
+        ;;
+      L)
+        PACKAGE_SOURCE="http://localhost:5103/"
+        ;;
+      f)
+        PACKAGE_FORCE=1
+        ;;
+      v)
+        VERBOSE=1
+        ;;
+      *)
+        Usage
+        ;;
+    esac
+  done
+  shift $((OPTIND-1))
+
+  if [ "$*" != "" ]; then
+    echo "Bad Options: $*"
+    Usage
+  fi
+
+  if [ "${PACKAGE_LIST}" = "" ]; then
+    echo "No packages selected."
+    Usage
+  fi
+
+  if [ -z "${NACL_ARCH:-}" ]; then
+    echo "error: NACL_ARCH not set"
+    exit 1
+  fi
+
+  if [ -z "${TOOLCHAIN:-}" ]; then
+    echo "error: TOOLCHAIN not set"
+    exit 1
+  fi
+
+  NACL_ARCH_ALT="${NACL_ARCH}"
+  if [[ "${TOOLCHAIN}" == "pnacl" ]]; then
+    NACL_ARCH_ALT="pnacl"
+  fi
+
+  if [ "${PACKAGE_SOURCE:-}" = "" ]; then
+    PACKAGE_SOURCE="${PACKAGE_SOURCE:-${DEFAULT_SOURCE}}"
+    ALTERNATE_SOURCE=1
+  fi
+
+  # Special cases for certain packages.
+  # Pairs of <package-name>:<source>:<package-subdir>[:<old-package-subdir>]
+  PACKAGE_INFO="\
+bzip2|${PACKAGE_SOURCE}|${TOOLCHAIN}/${NACL_ARCH_ALT}.zip \
+coreutils|${PACKAGE_SOURCE}|${TOOLCHAIN}/${NACL_ARCH_ALT}.zip \
+mingn.base|${PACKAGE_SOURCE}|glibc/tarballs/base.${NACL_ARCH}.zip \
+mingn.lib|${PACKAGE_SOURCE}|glibc/tarballs/lib.all.zip \
+emacs|${PACKAGE_SOURCE}|glibc/emacs-24.3.zip \
+git|${PACKAGE_SOURCE}|${TOOLCHAIN}/${NACL_ARCH_ALT}.zip \
+xz|${PACKAGE_SOURCE}|${TOOLCHAIN}/${NACL_ARCH_ALT}.zip \
+make|${PACKAGE_SOURCE}|${TOOLCHAIN}/${NACL_ARCH_ALT}.zip \
+grep|${PACKAGE_SOURCE}|${TOOLCHAIN}/${NACL_ARCH_ALT}.zip \
+ninja|${PACKAGE_SOURCE}|${TOOLCHAIN}/${NACL_ARCH_ALT}.zip \
+lua|${PACKAGE_SOURCE}|${TOOLCHAIN}/lua.zip \
+ruby|${PACKAGE_SOURCE}|${TOOLCHAIN}/ruby.zip \
+tk|${PACKAGE_SOURCE}|glibc/${NACL_ARCH_ALT}.zip \
+twm|${PACKAGE_SOURCE}|glibc/${NACL_ARCH_ALT}.zip \
+xeyes|${PACKAGE_SOURCE}|glibc/${NACL_ARCH_ALT}.zip \
+python|${PACKAGE_SOURCE}|${TOOLCHAIN}/python.zip \
+texlive|${PACKAGE_SOURCE}|${TOOLCHAIN}/${NACL_ARCH_ALT}.zip"
+
+  for package in ${PACKAGE_LIST}; do
+    InstallPackage ${package}
+  done
+}
+
+main "$@"
