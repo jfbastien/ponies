@@ -42,8 +42,7 @@
 
     <div layout horizontal center-center fit>
       <core-animated-pages id="pages" selected="{{route}}" valueattr="hash"
-                           transitions="slide-from-right"
-                           on-tap="{{cyclePages}}">
+                           transitions="slide-from-right">
         <template repeat="{{page, i in pages}}">
           <section hash="{{page.hash}}" layout vertical center-center>
             <div><em>Loading {{page.name}}</em></div>
