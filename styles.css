@@ -33,6 +33,7 @@ core-animated-pages > * {
 body /deep/ core-toolbar {
   background: #607D8B;
   color: #fff;
+  font-variant: small-caps;
 }
 
 core-toolbar img {
