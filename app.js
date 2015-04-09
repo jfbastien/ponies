@@ -5,10 +5,8 @@
 var template = document.querySelector('#t');
 
 template.pages = [
-    {name: 'Foo',  hash: 'foo',  icon: 'label'},
-    {name: 'Bar',  hash: 'bar',  icon: 'label'},
-    {name: 'Baz',  hash: 'baz',  icon: 'label'},
-    {name: 'Life', hash: 'life', icon: 'picture-in-picture'},
+  {name: 'C++ on the Web',  hash: 'intro',  icon: 'info-outline'},
+  {name: 'Life',            hash: 'life',   icon: 'picture-in-picture'},
 ];
 
 template.cyclePages = function(e, detail, sender) {
