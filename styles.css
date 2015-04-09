@@ -67,6 +67,11 @@ core-menu > paper-item.core-selected {
   background: #B0BEC5;
 }
 
+#pages embed {
+  width: 500px;
+  height: 500px;
+}
+
 @media all and (max-width: 480px) {
   core-animated-pages {
     width: 100%;

@@ -7,6 +7,7 @@ var template = document.querySelector('#t');
 template.pages = [
   {name: 'C++ on the Web',  hash: 'intro',  icon: 'info-outline'},
   {name: 'Life',            hash: 'life',   icon: 'picture-in-picture'},
+  {name: 'Flock',           hash: 'flock',  icon: 'cloud-queue'},
 ];
 
 template.cyclePages = function(e, detail, sender) {
