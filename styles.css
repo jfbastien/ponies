@@ -68,8 +68,8 @@ core-menu > paper-item.core-selected {
 }
 
 #pages embed {
-  width: 500px;
-  height: 500px;
+  width: 80vh;
+  height: 80vh;
 }
 
 @media all and (max-width: 480px) {
