@@ -10,15 +10,6 @@ template.pages = [
   {name: 'Voronoi',         hash: 'voronoi', icon: 'dashboard'},
 ];
 
-template.cyclePages = function(e, detail, sender) {
-  // Click clicks should navigate and not cycle pages.
-  if (e.path[0].localName == 'a') {
-    return;
-  }
-
-  e.shiftKey ? sender.selectPrevious(true) : sender.selectNext(true);
-};
-
 template.menuItemSelected = function(e, detail, sender) {
   if (detail.isSelected) {
     document.querySelector('#scaffold').closeDrawer();
