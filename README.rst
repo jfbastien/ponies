@@ -7,6 +7,9 @@ Ponies for developers without pwn'ing users
 
 :author: JF Bastien
 
+Abstract
+========
+
 Delivering a program through a web browser really shouldn't force it to be
 slower than executing it directly on your OS. Similarly, doing so shouldn't
 force you to rewrite programs that target venerable, cornerstone native
@@ -24,3 +27,8 @@ OS-agnostic packaging. Then, we'll describe how LLVM is used to deliver native
 code on the web securely, so developers get their C++ ponies and users don't get
 pwn'd. We'll also touch on the fuzzing, code randomization and sandboxing that
 keep 1B+ users safe.
+
+Details
+=======
+
+.. TODO Add details on how to run the demo.
