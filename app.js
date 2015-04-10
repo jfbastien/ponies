@@ -14,6 +14,7 @@ template.pages = [
   {name: 'Life',            hash: 'life',    icon: 'picture-in-picture'},
   {name: 'Flock',           hash: 'flock',   icon: 'cloud-queue'},
   {name: 'Voronoi',         hash: 'voronoi', icon: 'dashboard'},
+  {name: 'The End',         hash: 'outro',   icon: 'info'},
 ];
 
 template.menuItemSelected = function(e, detail, sender) {

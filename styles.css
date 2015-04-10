@@ -17,6 +17,12 @@ body {
   font-weight: 300;
 }
 
+a {
+  text-decoration: none;
+  color: #455A64;
+}
+a:hover { color: black; }
+
 core-animated-pages {
   width: 95%;
   height: 95%;
