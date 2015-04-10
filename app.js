@@ -1,7 +1,6 @@
 (function() {
 "use strict";
 
-
 var template = document.querySelector('#t');
 
 template.pages = [
