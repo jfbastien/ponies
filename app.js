@@ -1,6 +1,12 @@
 (function() {
 "use strict";
 
+window.addEventListener("beforeunload", function (e) {
+  var msg = "Leave?";
+  (e || window.event).returnValue = msg;
+  return msg;
+});
+
 var template = document.querySelector('#t');
 
 template.pages = [
