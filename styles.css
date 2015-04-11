@@ -95,8 +95,36 @@ core-menu > paper-item.core-selected {
   min-height:100vh;
 }
 
+/* For background images. */
+.bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 #pages p {
   z-index: 1; /* Above any images. */
+}
+
+.preso-text {
+  color: #ECEFF1;
+  text-shadow:
+    -2px -2px 0 #263238,
+     2px -2px 0 #263238,
+    -2px 2px 0 #263238,
+     2px 2px 0 #263238;
+  margin: 0.25em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 10vh;
+}
+.preso-big {
+  font-size: 15vh;
+}
+.preso-small {
+  font-size: 7vh;
+  padding-left: 2em;
 }
 
 @media all and (max-width: 480px) {

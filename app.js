@@ -14,6 +14,7 @@ template.pages = [
   {name: 'Life',            hash: 'life',    icon: 'picture-in-picture'},
   {name: 'Flock',           hash: 'flock',   icon: 'picture-in-picture'},
   {name: 'Voronoi',         hash: 'voronoi', icon: 'picture-in-picture'},
+  {name: 'Randomization',   hash: 'random',  icon: 'label-outline'},
   {name: 'Fuzzing',         hash: 'fuzzing', icon: 'label-outline'},
   {name: 'The End',         hash: 'outro',   icon: 'info'},
 ];
