@@ -25,13 +25,12 @@ a:hover { color: black; }
 
 core-animated-pages {
   width: 95%;
-  height: 95%;
+  height: 100%;
   -webkit-user-select: none;
   overflow: hidden;
 }
 
 core-animated-pages > * {
-  border-radius: 1em;
   font-size: 4em;
   background: white;
 }
@@ -74,8 +73,10 @@ core-menu > paper-item.core-selected {
 }
 
 #pages embed {
-  width: 80vh;
-  height: 80vh;
+  width: 100vw;
+  height: 100vh;
+  min-width: 400px;
+  min-height: 400px;
 }
 
 @media all and (max-width: 480px) {
