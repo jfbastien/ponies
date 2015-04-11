@@ -12,8 +12,9 @@ var template = document.querySelector('#t');
 template.pages = [
   {name: 'C++ on the Web',  hash: 'intro',   icon: 'info-outline'},
   {name: 'Life',            hash: 'life',    icon: 'picture-in-picture'},
-  {name: 'Flock',           hash: 'flock',   icon: 'cloud-queue'},
-  {name: 'Voronoi',         hash: 'voronoi', icon: 'dashboard'},
+  {name: 'Flock',           hash: 'flock',   icon: 'picture-in-picture'},
+  {name: 'Voronoi',         hash: 'voronoi', icon: 'picture-in-picture'},
+  {name: 'Fuzzing',         hash: 'fuzzing', icon: 'label-outline'},
   {name: 'The End',         hash: 'outro',   icon: 'info'},
 ];
 

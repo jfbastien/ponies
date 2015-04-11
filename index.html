@@ -15,17 +15,17 @@
   <!-- Route controller. -->
   <flatiron-director route="{{route}}" autoHash></flatiron-director>
 
-  <core-scaffold id="scaffold" drawerWidth="4em">
+  <core-scaffold id="scaffold" drawerWidth="3em">
 
     <nav>
       <core-toolbar>
         <img src="images/pony.svg" />
       </core-toolbar>
-      <core-menu valueattr="hash" selected="{{route}}" selectedModel="{{selectedPage}}"
+      <core-menu id="core-menu" valueattr="hash" selected="{{route}}" selectedModel="{{selectedPage}}"
                  on-core-select="{{menuItemSelected}}">
         <template repeat="{{page, i in pages}}">
           <paper-item hash="{{page.hash}}">
-	    <core-icon icon="{{page.icon}}"></core-icon>
+	    <core-icon class="nav-icon" icon="{{page.icon}}"></core-icon>
           </paper-item>
         </template>
       </core-menu>

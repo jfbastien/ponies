@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+<div id="content">
+  <style>
+    /* Anchor the image on its bottom-right. */
+    #fuzzing { position: absolute; bottom: 0; right: 0; }
+    .fuzzing-text {
+      color: #ECEFF1;
+      margin: 0.25em;
+      position: absolute;
+      top: 0;
+      left: 0;
+      line-height: 10vh;
+    }
+    .fuzzing-big {
+      font-size: 15vh;
+    }
+    .fuzzing-small {
+      font-size: 7vh;
+      padding-left: 2em;
+    }
+  </style>
+    <p class="fuzzing-text fuzzing-big">
+      <span class="fuzzing-big">Random bit flips</span><br />
+      <span class="fuzzing-small">Non-byte-aligned format!</span><br />
+      <span class="fuzzing-big">Format-aware</span><br />
+      <span class="fuzzing-small">AFL + libFuzzer</span>
+    </p>
+  <img id="fuzzing" src="images/sepia-rabbit.jpg" />
+</body>
+</html>

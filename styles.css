@@ -64,6 +64,17 @@ paper-item a {
   color: currentcolor;
 }
 
+body /deep/ .button-content {
+  /* Navigation buttons closer: don't overflow small screen. */
+  padding: 0.2em 0.5em 0.2em 0.2em;
+}
+
+.nav-icon {
+  /* Same as above: small icons. */
+  width: 1em;
+  height: 1em;
+}
+
 core-menu > paper-item.core-selected {
   background: #CFD8DC;
 }
@@ -77,6 +88,15 @@ core-menu > paper-item.core-selected {
   height: 100vh;
   min-width: 400px;
   min-height: 400px;
+}
+
+#pages img {
+  min-width:100vw;
+  min-height:100vh;
+}
+
+#pages p {
+  z-index: 1; /* Above any images. */
 }
 
 @media all and (max-width: 480px) {
