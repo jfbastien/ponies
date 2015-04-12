@@ -11,6 +11,8 @@ var template = document.querySelector('#t');
 
 template.pages = [
   {name: 'C++ on the Web',  hash: 'intro',   icon: 'info-outline'},
+  {name: 'PNaCl',           hash: 'pnacl',   icon: 'label-outline'},
+  {name: 'Coming Soon',     hash: 'coming',  icon: 'label-outline'},
   {name: 'Life',            hash: 'life',    icon: 'picture-in-picture'},
   {name: 'Flock',           hash: 'flock',   icon: 'picture-in-picture'},
   {name: 'Voronoi',         hash: 'voronoi', icon: 'picture-in-picture'},

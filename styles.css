@@ -126,6 +126,10 @@ core-menu > paper-item.core-selected {
   font-size: 7vh;
   padding-left: 2em;
 }
+.preso-xsmall {
+  font-size: 5vh;
+  padding-left: 4em;
+}
 
 @media all and (max-width: 480px) {
   core-animated-pages {
