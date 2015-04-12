@@ -20,8 +20,8 @@ template.pages = [
   {name: 'Security',        hash: 'security', icon: 'label'},
   {name: 'Randomization',   hash: 'random',   icon: 'label'},
   {name: 'Fuzzing',         hash: 'fuzzing',  icon: 'label'},
-  {name: 'Hack Me',         hash: 'hack',     icon: 'label'},
-  {name: 'JavaScript?',     hash: 'js',       icon: 'label'},
+  {name: 'Hack Me',         hash: 'hack',     icon: 'report'},
+  {name: 'JavaScript?',     hash: 'js',       icon: 'extension'},
   {name: 'The End',         hash: 'outro',    icon: 'info'},
 ];
 
