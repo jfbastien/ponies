@@ -31,4 +31,26 @@ keep 1B+ users safe.
 Details
 =======
 
-.. TODO Add details on how to run the demo.
+The main presentation was built using Polymer_ and is scarce in text: I usually
+try to entertain my audience rather than lose their attention while they
+read. The main objectives of this presentation are:
+
+ * Introduce native code on the web.
+ * Showcase some of what's been possible for a while.
+ * Showcase a shiny new development environment.
+ * Discuss how that development environment works.
+ * Discuss How users are kept safe while developers get the ponies listed above.
+ * Open up some future evolution, and hopes for standardization.
+
+This is a pretty bleeding-edge demo, works only in a recent Chrome version, and
+there's a bit of smoke and mirrors in getting it to look as amazing today as it
+does when I demo it. The main intent is to showcase what's possible today, and
+what will be possible in the near future.
+
+Some of the smoke includes running with ``chrome://flags/#enable-nacl`` until
+glibc and dynamic linking work fully in PNaCl, as well as starting Chrome with
+``--allow-nacl-socket-api=localhost`` until sockets are exposed beyond
+WebSockets in a way that respects permissions and the usual security model (or,
+as a shortcut, through an extension).
+
+.. _Polymer: https://www.polymer-project.org
