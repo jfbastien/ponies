@@ -17,6 +17,7 @@ template.pages = [
   {name: 'Flock',           hash: 'flock',    icon: 'picture-in-picture'},
   {name: 'DevEnv',          hash: 'devenv',   icon: 'cloud-queue'},
   {name: 'Security',        hash: 'security', icon: 'label'},
+  {name: 'Attack Surfaces', hash: 'surfaces', icon: 'label'},
   {name: 'Randomization',   hash: 'random',   icon: 'label'},
   {name: 'Fuzzing',         hash: 'fuzzing',  icon: 'label'},
   {name: 'Hack Me',         hash: 'hack',     icon: 'report'},
