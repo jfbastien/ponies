@@ -35,12 +35,12 @@ The main presentation was built using Polymer_ and is scarce in text: I usually
 try to entertain my audience rather than lose their attention while they
 read. The main objectives of this presentation are:
 
- * Introduce native code on the web, discussing PNaCl_ and Emscripten_.
- * Showcase some of what's been possible for a while.
- * Showcase a shiny new in-browser development environment.
- * Discuss how that development environment works.
- * Discuss How users are kept safe while developers get the ponies listed above.
- * Open up some future evolution, and hopes for standardization.
+- Introduce native code on the web, discussing PNaCl_ and Emscripten_.
+- Showcase some of what's been possible for a while.
+- Showcase a shiny new in-browser development environment.
+- Discuss how that development environment works.
+- Discuss How users are kept safe while developers get the ponies listed above.
+- Open up some future evolution, and hopes for standardization.
 
 This is a pretty bleeding-edge demo, works only in a recent Chrome version, and
 there's a bit of smoke and mirrors in getting it to look as amazing today as it
