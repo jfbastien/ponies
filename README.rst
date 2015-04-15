@@ -35,9 +35,9 @@ The main presentation was built using Polymer_ and is scarce in text: I usually
 try to entertain my audience rather than lose their attention while they
 read. The main objectives of this presentation are:
 
- * Introduce native code on the web.
+ * Introduce native code on the web, discussing PNaCl_ and Emscripten_.
  * Showcase some of what's been possible for a while.
- * Showcase a shiny new development environment.
+ * Showcase a shiny new in-browser development environment.
  * Discuss how that development environment works.
  * Discuss How users are kept safe while developers get the ponies listed above.
  * Open up some future evolution, and hopes for standardization.
@@ -53,4 +53,10 @@ glibc and dynamic linking work fully in PNaCl, as well as starting Chrome with
 WebSockets in a way that respects permissions and the usual security model (or,
 as a shortcut, through an extension).
 
+The in-browser development environment is available under naclports_ as devenv_.
+
 .. _Polymer: https://www.polymer-project.org
+.. _PNaCl: http://gonacl.com
+.. _Emscripten: http://emscripten.org
+.. _naclports: https://code.google.com/p/naclports/wiki/PortList
+.. _devenv: https://chromium.googlesource.com/external/naclports/+/master/ports/devenv
