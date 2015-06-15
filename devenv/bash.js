@@ -11,9 +11,9 @@ NaClTerm.argv = ['--init-file', '/mnt/http/bashrc'];
 NaClProcessManager.useNaClAltHttp = true;
 
 function onInit() {
-  // Request 2GB storage.
+  // Request 3GB storage.
   navigator.webkitPersistentStorage.requestQuota(
-      1024 * 1024 * 1024 * 2,
+      1024 * 1024 * 1024 * 3,
       NaClTerm.init,
       function() {
         console.log("Failed to allocate space!\n");
