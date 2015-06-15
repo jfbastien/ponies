@@ -21,7 +21,7 @@ template.pages = [
   {name: 'Randomization',   hash: 'random',   icon: 'label'},
   {name: 'Fuzzing',         hash: 'fuzzing',  icon: 'label'},
   {name: 'Hack Me',         hash: 'hack',     icon: 'report'},
-  {name: 'JavaScript?',     hash: 'js',       icon: 'extension'},
+  {name: 'WebAssembly',     hash: 'wasm',     icon: 'extension'},
   {name: 'The End',         hash: 'outro',    icon: 'info'},
 ];
 
