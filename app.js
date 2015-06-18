@@ -11,6 +11,7 @@ var template = document.querySelector('#t');
 
 template.pages = [
   {name: 'C++ on the Web',  hash: 'intro',    icon: 'info-outline'},
+  {name: 'WebAssembly',     hash: 'wasm',     icon: 'extension'},
   {name: 'PNaCl',           hash: 'pnacl',    icon: 'label-outline'},
   {name: 'Coming Soon',     hash: 'coming',   icon: 'label-outline'},
   {name: 'Life',            hash: 'life',     icon: 'picture-in-picture'},
@@ -21,7 +22,6 @@ template.pages = [
   {name: 'Randomization',   hash: 'random',   icon: 'label'},
   {name: 'Fuzzing',         hash: 'fuzzing',  icon: 'label'},
   {name: 'Hack Me',         hash: 'hack',     icon: 'report'},
-  {name: 'WebAssembly',     hash: 'wasm',     icon: 'extension'},
   {name: 'The End',         hash: 'outro',    icon: 'info'},
 ];
 
